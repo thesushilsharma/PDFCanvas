@@ -213,10 +213,11 @@ export const SaveLoadDialog: React.FC<SaveLoadDialogProps> = ({
               ) : (
                 <div className="p-2 space-y-2">
                   {layouts.map((layout) => (
-                    <div
+                    <button
                       key={layout.id}
+                      type="button"
                       className={`
-                        p-3 rounded-lg border cursor-pointer transition-all
+                        w-full text-left p-3 rounded-lg border cursor-pointer transition-all
                         ${
                           selectedId === layout.id
                             ? 'border-primary bg-primary/5 ring-1 ring-primary'
@@ -259,7 +260,7 @@ export const SaveLoadDialog: React.FC<SaveLoadDialogProps> = ({
                           </Button>
                         </div>
                       </div>
-                    </div>
+                    </button>
                   ))}
                 </div>
               )}
