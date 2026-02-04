@@ -32,8 +32,8 @@ import type {
 Font.register({
   family: 'Inter',
   fonts: [
-    { src: 'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2', fontWeight: 'normal' },
-    { src: 'https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuGKYAZ9hjp-Ek-_EeA.woff2', fontWeight: 'bold' },
+    { src: 'https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/files/inter-latin-400-normal.woff2', fontWeight: 'normal' },
+    { src: 'https://cdn.jsdelivr.net/npm/@fontsource/inter@latest/files/inter-latin-700-normal.woff2', fontWeight: 'bold' },
   ],
 });
 
