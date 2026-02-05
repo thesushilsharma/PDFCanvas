@@ -34,55 +34,68 @@ export const TemplateSelector: React.FC<TemplateSelectorProps> = ({
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Blank Template */}
-        <Card 
-          className="group cursor-pointer transition-all duration-200 hover:shadow-lg hover:border-primary/50"
+        <button
+          type="button"
           onClick={onCreateBlank}
+          className="text-left"
+          aria-label="Create blank document"
         >
-          <CardHeader className="pb-3">
-            <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center mb-3 group-hover:bg-primary/10 transition-colors">
-              <Plus className="h-6 w-6 text-muted-foreground group-hover:text-primary" />
-            </div>
-            <CardTitle className="text-base">Blank Document</CardTitle>
-            <CardDescription className="text-xs">
-              Start from scratch with an empty document
-            </CardDescription>
-          </CardHeader>
-        </Card>
+          <Card className="group cursor-pointer transition-all duration-300 hover:shadow-xl hover:border-primary/50 hover:scale-[1.02] active:scale-[0.98]">
+            <CardHeader className="pb-3">
+              <div className="w-12 h-12 rounded-2xl bg-muted flex items-center justify-center mb-3 group-hover:bg-primary/10 transition-colors">
+                <Plus className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-colors" />
+              </div>
+              <CardTitle className="text-base">Blank Document</CardTitle>
+              <CardDescription className="text-xs">
+                Start from scratch with an empty document
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </button>
 
         {/* Pre-built Templates */}
         {Object.entries(templates).map(([key, template]) => (
-          <Card 
+          <button
             key={key}
-            className={`group cursor-pointer transition-all duration-200 hover:shadow-lg ${
-              selectedTemplate === key 
-                ? 'border-primary shadow-lg ring-2 ring-primary/20' 
-                : 'hover:border-primary/50'
-            }`}
+            type="button"
             onClick={() => onSelectTemplate(key as TemplateName)}
+            className="text-left"
+            aria-label={`Select ${template.name} template`}
+            aria-pressed={selectedTemplate === key}
           >
-            <CardHeader className="pb-3">
-              <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-3 transition-colors ${
-                selectedTemplate === key 
-                  ? 'bg-primary text-primary-foreground' 
-                  : 'bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary'
-              }`}>
-                {templateIcons[key as TemplateName]}
-              </div>
-              <CardTitle className="text-base">{template.name}</CardTitle>
-              <CardDescription className="text-xs">
-                {template.description}
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <Button 
-                variant={selectedTemplate === key ? "default" : "outline"} 
-                size="sm" 
-                className="w-full"
-              >
-                {selectedTemplate === key ? 'Selected' : 'Use Template'}
-              </Button>
-            </CardContent>
-          </Card>
+            <Card
+              className={`group cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] ${
+                selectedTemplate === key
+                  ? 'border-primary shadow-lg ring-2 ring-primary/20'
+                  : 'hover:border-primary/50'
+              }`}
+            >
+              <CardHeader className="pb-3">
+                <div
+                  className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-3 transition-colors ${
+                    selectedTemplate === key
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary'
+                  }`}
+                >
+                  {templateIcons[key as TemplateName]}
+                </div>
+                <CardTitle className="text-base">{template.name}</CardTitle>
+                <CardDescription className="text-xs">
+                  {template.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <Button
+                  variant={selectedTemplate === key ? 'default' : 'outline'}
+                  size="sm"
+                  className="w-full pointer-events-none"
+                >
+                  {selectedTemplate === key ? 'Selected' : 'Use Template'}
+                </Button>
+              </CardContent>
+            </Card>
+          </button>
         ))}
       </div>
     </div>

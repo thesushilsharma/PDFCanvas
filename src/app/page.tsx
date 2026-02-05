@@ -16,24 +16,31 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center px-4 py-24 text-center md:py-32">
-        <Badge variant="secondary" className="mb-4">
+      <section className="relative flex flex-col items-center justify-center px-4 py-24 text-center md:py-32 overflow-hidden">
+        {/* Abstract Background Element */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -z-10 animate-pulse" />
+
+        <Badge variant="outline" className="mb-6 px-4 py-1 border-primary/20 bg-primary/5 text-primary text-sm font-medium backdrop-blur-sm animate-fade-in">
           Production-Grade PDF Generation
         </Badge>
-        <h1 className="max-w-4xl text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl">
-          Visual Editor for <span className="text-primary">React PDFs</span>
+
+        <h1 className="max-w-4xl text-5xl font-extrabold tracking-tight sm:text-7xl md:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70 animate-fade-in [animation-delay:100ms]">
+          Visual Editor for <br />
+          <span className="text-primary selection:bg-primary/20">React PDFs</span>
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
+
+        <p className="mt-8 max-w-2xl text-lg text-muted-foreground sm:text-xl font-light leading-relaxed animate-fade-in [animation-delay:200ms]">
           Complete platform for generating pixel-perfect PDFs. Design visually, bind data with JSON schemas,
           and export professional documents with deterministic rendering.
         </p>
-        <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-          <Button size="lg" asChild>
+
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row items-center animate-fade-in [animation-delay:300ms]">
+          <Button size="lg" className="h-12 px-8 text-base shadow-glow hover:scale-105 transition-transform" asChild>
             <Link href="/templates">
               Start Creating <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-          <Button size="lg" variant="outline" asChild>
+          <Button size="lg" variant="ghost" className="h-12 px-8 text-base hover:bg-primary/5" asChild>
             <Link href="https://github.com/thesushilsharma/PDFCanvas" target="_blank">
               View on GitHub
             </Link>
