@@ -1,7 +1,7 @@
 # PDFCanvas
 
 PDFCanvas is a production-grade, pixel-perfect PDF generation platform for React, combining a visual editor with deterministic rendering.
-It built with React, Next.js, TypeScript, TailwindCSS, and @react-pdf/renderer. Design documents visually, manage a JSON schema, and export professional PDFs such as invoices, reports, or letters.
+Built with React, Next.js, TypeScript, TailwindCSS, and @react-pdf/renderer. Design documents visually, manage a JSON schema, and export professional PDFs such as invoices, reports, or letters.
 
 ## Features
 
@@ -13,14 +13,73 @@ It built with React, Next.js, TypeScript, TailwindCSS, and @react-pdf/renderer. 
 - **Keyboard shortcuts** for productivity
 - **Modern UI** using shadcn/ui and Radix primitives
 
+## Getting Started
+
+### Prerequisites
+
+- **Node.js** 20 or later
+- **Package manager**: npm, pnpm, or yarn
+
+### Installation
+
+```bash
+# Using npm
+npm install
+
+# Or using pnpm
+pnpm install
+
+# Or using yarn
+yarn install
+```
+
+### Development
+
+```bash
+# Start the development server
+npm run dev
+
+# Open http://localhost:3000 in your browser
+```
+
+## Project Structure
+
+```
+src/
+├── app/              # Next.js 16 App Router
+│   ├── (pages)/     # Page routes
+│   ├── layout.tsx   # Root layout
+│   └── page.tsx     # Home page
+├── components/
+│   ├── ui/          # shadcn/ui components (buttons, dialogs, etc.)
+│   ├── pdf/         # PDF generation components
+│   └── NavLink.tsx  # Navigation components
+├── hooks/           # Custom React hooks
+├── lib/             # Utility functions and helpers
+└── context/         # React context providers
+```
+
 ## Tech Stack
 
-- **App**: React 19, TypeScript, Next.js 16
-- **UI**: TailwindCSS, shadcn/ui, Radix UI, lucide-react icons
-- **PDF**: `@react-pdf/renderer`
-- **State & Data**: TanStack Query
-- **Editor**: Tiptap (rich text and formatting)
+- **Framework**: Next.js 16 (App Router)
+- **Runtime**: React 19, TypeScript 5
+- **Styling**: Tailwind CSS v4, shadcn/ui, Radix UI
+- **Icons**: lucide-react
+- **PDF Generation**: `@react-pdf/renderer`
+- **State Management**: TanStack Query (React Query)
+- **Rich Text Editor**: Tiptap with extensions
 - **Drag & Drop**: dnd-kit
+- **Animations**: motion (formerly framer-motion)
+- **Code Quality**: Biome (linting & formatting)
+- **Theme**: next-themes (dark mode support)
+
+## Scripts
+
+- `npm run dev` - Start development server on http://localhost:3000
+- `npm run build` - Create production build
+- `npm start` - Start production server
+- `npm run lint` - Run Biome linter checks
+- `npm run format` - Format code with Biome
 
 ## How It Works
 
@@ -41,7 +100,7 @@ It built with React, Next.js, TypeScript, TailwindCSS, and @react-pdf/renderer. 
 
 ## Configuration
 
-- **TailwindCSS**: Configured via `globals.css` and `postcss.config.js`.
+- **TailwindCSS**: Configured via `globals.css` and `postcss.config.mjs`.
 - **shadcn/ui**: Component styles are generated; see `components.json`.
 
 ## License
