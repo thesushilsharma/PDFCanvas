@@ -12,7 +12,8 @@ import {
   Keyboard
 } from "lucide-react";
 
-export default function Home() {
+export default async function Home() {
+  'use cache';
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       {/* Hero Section */}

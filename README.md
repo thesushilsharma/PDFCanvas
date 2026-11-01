@@ -13,52 +13,6 @@ Built with React, Next.js, TypeScript, TailwindCSS, and @react-pdf/renderer. Des
 - **Keyboard shortcuts** for productivity
 - **Modern UI** using shadcn/ui and Radix primitives
 
-## Getting Started
-
-### Prerequisites
-
-- **Node.js** 20 or later
-- **Package manager**: npm, pnpm, or yarn
-
-### Installation
-
-```bash
-# Using npm
-npm install
-
-# Or using pnpm
-pnpm install
-
-# Or using yarn
-yarn install
-```
-
-### Development
-
-```bash
-# Start the development server
-npm run dev
-
-# Open http://localhost:3000 in your browser
-```
-
-## Project Structure
-
-```
-src/
-├── app/              # Next.js 16 App Router
-│   ├── (pages)/     # Page routes
-│   ├── layout.tsx   # Root layout
-│   └── page.tsx     # Home page
-├── components/
-│   ├── ui/          # shadcn/ui components (buttons, dialogs, etc.)
-│   ├── pdf/         # PDF generation components
-│   └── NavLink.tsx  # Navigation components
-├── hooks/           # Custom React hooks
-├── lib/             # Utility functions and helpers
-└── context/         # React context providers
-```
-
 ## Tech Stack
 
 - **Framework**: Next.js 16 (App Router)
@@ -72,14 +26,6 @@ src/
 - **Animations**: motion (formerly framer-motion)
 - **Code Quality**: Biome (linting & formatting)
 - **Theme**: next-themes (dark mode support)
-
-## Scripts
-
-- `npm run dev` - Start development server on http://localhost:3000
-- `npm run build` - Create production build
-- `npm start` - Start production server
-- `npm run lint` - Run Biome linter checks
-- `npm run format` - Format code with Biome
 
 ## How It Works
 
